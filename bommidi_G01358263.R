@@ -21,8 +21,8 @@ data <- read.csv("/Users/sohanbommidi/Downloads/EmployeeAttrition.csv")\
 p<-subset(data,Gender=="Male")\
 q<-subset(data,Gender=="Female")\
 \
-p1<-x$MonthlyIncome  #monthly income of Males\
-q1<-y$MonthlyIncome  #monthly income of females\
+p1<-p$MonthlyIncome  #monthly income of Males\
+q1<-q$MonthlyIncome  #monthly income of females\
 \
 t.test(p1,q1,alternative = "greater",mu=0)\
 # Because the P-value (0.889) is bigger than the significance level, we fail to reject the null hypothesis. \
@@ -30,8 +30,8 @@ t.test(p1,q1,alternative = "greater",mu=0)\
 \
 \
 #2. If the WorkLifeBalance of Males is less than Females\
-p2<-x$WorkLifeBalance\
-q2<-y$WorkLifeBalance\
+p2<-p$WorkLifeBalance\
+q2<-q$WorkLifeBalance\
 \
 t.test(p2,q2,alternative = "less",mu=0)\
 # Because the P-value (0.457) is bigger than the significance level, we fail to reject the null hypothesis. \
@@ -71,9 +71,9 @@ q8<-q7$MonthlyIncome\
 t.test(p8,q8,alternative = "greater",mu=0)\
 #Because the P-value (2.2e-16) is smaller than the significance level, we can reject the null hypothesis and support the claim.#6. If YearsAtCompany and DailyRate are correlated with each other
 \f1\fs32 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+\
 
-\f0\fs24 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\f0\fs24 \kerning1\expnd0\expndtw0 \
 #6 If YearsAtCompany and DailyRate are correlated with each other\
 \
 p9<-data$YearsAtCompany\
@@ -92,19 +92,15 @@ cor.test(data$YearsAtCompany,data$MonthlyIncome)\
 \
 rs_a<-aov(data$YearsAtCompany~factor(data$MaritalStatus))\
 summary(rs_a)\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 # Because the P-value is 0.0247 < 0.5 , we can reject the null hypothesis. \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 #As a result, YearsAtCompany fluctuates according to each MaritalStatus.\
+# Because the P-value is 0.0247 < 0.5 , we can reject the null hypothesis. \
+#As a result, YearsAtCompany fluctuates according to each MaritalStatus.\
 \
 #9. If MonthlyIncome varies depending on individual\'92s PerformanceRating\
 \
 rs_b<-aov(data$MonthlyIncome~factor(data$PerformanceRating))\
 summary(rs_b)\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 # Because the P-value is 0.512 > 0.5, we cannot reject the null hypothesis. \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 #As a result, we cannot substantiate the assertion that MonthlyIncome fluctuates based on individual PerformanceRating.\
+# Because the P-value is 0.512 > 0.5, we cannot reject the null hypothesis. \
+#As a result, we cannot substantiate the assertion that MonthlyIncome fluctuates based on individual PerformanceRating.\
 \
 \
  #10. If MonthlyIncome varies depending on individual\'92s WorkLifeBalance \
