@@ -34,6 +34,6 @@ dfRawData = pd.read_csv('../data/CollegeScorecard_Raw_Data/MERGED2018_19_PP.csv'
 ## Steps to run the analysis scripts
 ### Clone repository
 ```
-https://github.com/vnshanmukh/DATA-ANALYSIS-OF-COLLEGE-SCORECARD
+https://github.com/Sohanbommidi/bommidi_AIT580.git
 ```
 * From analysis folder open ait.ipynb in jupyter notebook or google collabrator
